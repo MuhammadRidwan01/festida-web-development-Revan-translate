@@ -16,10 +16,8 @@ Route::get('/kategori', [FrontController::class, 'kategori'])->name('front.kateg
 Route::get('/details/{company_job:slug}', [FrontController::class, 'details'])->name('front.details');
 Route::get('/category/{category:slug}', [FrontController::class, 'category'])->name('front.category');
 Route::get('/search/jobs/', [FrontController::class, 'search'])->name('front.search');
+Route::get('/dashboard', [DasboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

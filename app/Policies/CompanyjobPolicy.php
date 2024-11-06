@@ -25,7 +25,7 @@ class CompanyjobPolicy
     }
     public function edit(User $user, Companyjob $company): bool
     {
-        return $company->employer_id == $user->id;
+        return $company->company->employer_id == $user->id;
     }
     /**
      * Determine whether the user can create models.

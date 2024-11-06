@@ -94,7 +94,7 @@ class CategoryController extends Controller
         DB::transaction(function () use ($category) {
             $category->delete();
         });
-        return redirect()->route('admin.categories.index');
+        return redirect()->back();
     }
     public function download_file(){
 

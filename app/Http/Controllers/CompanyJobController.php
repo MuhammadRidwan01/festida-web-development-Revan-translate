@@ -81,7 +81,7 @@ class CompanyJobController extends Controller
             }
         });
 
-        return redirect()->route('admin.company.index');
+        return redirect()->route('admin.company_jobs.index');
     }
 
     /**
